@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ExtensionManifest xmlns="http://tableau.com/schemas/extension/manifest" version="1.0">
+<Manifest xmlns="http://tableau.com/schemas/extension/manifest" version="1.0">
   <Extension>
-    <Id>analytics.chatbot.framework</Id>
-    <Name>Analytics Chatbot Framework</Name>
-    <Description>Conversational insights for dashboards (Tableau + CSV adapters).</Description>
+    <Id>analytics.chatbot.extension</Id>
+    <Name>Analytics Chatbot</Name>
+    <Description>Conversational insights for Tableau dashboards with OpenAI integration.</Description>
 
+    <!-- Path to your extension's main HTML file -->
     <ExtensionUrl>src/index.html</ExtensionUrl>
 
+    <!-- Icon used in Tableau -->
     <Icons>
-      <IconSize size="128">src/assets/icons/chatbot_128.png</IconSize>
-      <IconSize size="48">src/assets/icons/chatbot_64.png</IconSize>
+      <Icon size="48">src/assets/icons/chatbot.png</Icon>
     </Icons>
 
+    <!-- Permissions this extension needs -->
     <Permissions>
       <Permission>ReadData</Permission>
       <Permission>ReadMetadata</Permission>
     </Permissions>
 
+    <!-- Developer info -->
     <Developer>
-      <Name>BI Extension Solutions</Name>
-      <Url>https://example.com</Url>
-      <Email>support@example.com</Email>
+      <Name>Sasi Reddy</Name>
+      <Email>ippalashashankreddy@gmail.com</Email>
+      <Url>https://sasi934.github.io/analytics-chatbot-extension/</Url>
     </Developer>
   </Extension>
-</ExtensionManifest>
+</Manifest>
