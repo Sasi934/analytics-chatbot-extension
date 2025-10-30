@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExtensionManifest xmlns="http://tableau.com/schemas/extension/manifest" version="1.0">
+  <Extension>
+    <Id>analytics.chatbot.framework</Id>
+    <Name>Analytics Chatbot Framework</Name>
+    <Description>Conversational insights for dashboards (Tableau + CSV adapters).</Description>
+
+    <ExtensionUrl>src/index.html</ExtensionUrl>
+
+    <Icons>
+      <IconSize size="128">src/assets/icons/chatbot_128.png</IconSize>
+      <IconSize size="48">src/assets/icons/chatbot_64.png</IconSize>
+    </Icons>
+
+    <Permissions>
+      <Permission>ReadData</Permission>
+      <Permission>ReadMetadata</Permission>
+    </Permissions>
+
+    <Developer>
+      <Name>BI Extension Solutions</Name>
+      <Url>https://example.com</Url>
+      <Email>support@example.com</Email>
+    </Developer>
+  </Extension>
+</ExtensionManifest>
