@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest manifest-version="1.0" xmlns="http://www.tableau.com/xml/extension_manifest">
+
+  <dashboard-extension id="com.analytics.chatbot" extension-version="1.0.0">
+
+    <default-locale>en_US</default-locale>
+    <name resource-id="name"/>
+    <description>Conversational insights for Tableau dashboards with OpenAI integration.</description>
+    <author name="Sasi Reddy" email="ippalashashankreddy@gmail.com" organization="YourOrg" website="https://sasi934.github.io/analytics-chatbot-extension/"/>
+    <min-api-version>1.0</min-api-version>
+
+    <source-location>
+      <url>https://sasi934.github.io/analytics-chatbot-extension/index.html</url>
+    </source-location>
+
+    <icon/> <!-- required placeholder -->
+
+    <permissions>
+      <permission>full data</permission>
+    </permissions>
+
+  </dashboard-extension>
+
+  <resources>
+    <resource id="name">
+      <text locale="en_US">Analytics Chatbot</text>
+    </resource>
+  </resources>
+
+</manifest>

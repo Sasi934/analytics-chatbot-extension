@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Analytics Chatbot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <!-- Tableau Extensions API -->
+  <script src="https://tableaucdn.azureedge.net/extensions/1/latest/tableau.extensions.1.latest.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="app" class="app-dark">
+    <header class="app-header">
+      <div class="brand">
+        <img src="assets/icons/chatbot_128.png" alt="bot icon" class="brand-icon"/>
+        <div>
+          <h1>Analytics Chatbot</h1>
+          <small>Ask your dashboard anything</small>
+        </div>
+      </div>
+      <div id="status" class="status">⏳ Initializing...</div>
+    </header>
+
+    <main class="main">
+      <aside class="left-panel">
+        <div class="meta">
+          <h3>Tips</h3>
+          <ul>
+            <li>“Top 5 trips”</li>
+            <li>“Top 3 cities by revenue”</li>
+            <li>Upload a CSV to test without Tableau</li>
+          </ul>
+
+          <hr/>
+
+          <h4>Load CSV (for non-Tableau use)</h4>
+          <input id="csvInput" type="file" accept=".csv,.txt" />
+          <div id="csvInfo" style="margin-top:8px;color:var(--muted);font-size:0.9rem">No CSV loaded</div>
+
+          <hr/>
+
+          <h4>🔐 OpenAI Settings</h4>
+          <input id="openaiKey" type="password" placeholder="Enter your OpenAI API Key" style="width:100%;padding:6px;border-radius:6px;border:1px solid #555;margin-bottom:6px;"/>
+          <button id="saveKey" style="width:100%;padding:6px;border-radius:6px;background:#0cf;color:#000;font-weight:600;">Save Key</button>
+        </div>
+      </aside>
+
+      <section class="chat-panel">
+        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+        <form id="inputForm" class="input-form" autocomplete="off">
+          <button id="micBtn" type="button" class="icon-btn" title="Voice support coming soon">🎤</button>
+          <input id="userInput" class="user-input" type="text"
+                 placeholder="Ask insights from the dashboard..." />
+          <button id="sendBtn" class="send-btn" type="submit">Send ➤</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Data stays in your environment • Read-only by default</small>
+    </footer>
+  </div>
+
+  <!-- Adapters -->
+  <script src="adapters/tableau.adapter.js"></script>
+  <script src="adapters/csv.adapter.js"></script>
+
+  <!-- AI adapter -->
+  <script type="module" src="ai/openai.adapter.js"></script>
+
+  <!-- Core helpers -->
+  <script src="parser.js"></script>
+  <script src="utils.js"></script>
+  <script src="charts.js"></script>
+
+  <!-- Main app -->
+  <script type="module" src="app.js" defer></script>
+</body>
+</html>
